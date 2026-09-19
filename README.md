@@ -9,7 +9,7 @@ Parody memecoin site + live poll (Superior / Extreme / Supreme Intelligence).
 - `page.html` — same site with the logo inlined, used for the claude.ai preview only. Not deployed.
 
 ## Launch checklist
-1. Paste the contract address into `CONFIG.CONTRACT_ADDRESS` in `index.html`. Buy / Dexscreener links derive from it automatically (or set `BUY_URL` / `DEX_URL`).
+1. Paste the contract address into `CONFIG.CONTRACT_ADDRESS` in `index.html`. Set `BUY_URL` to the Pons page of the coin (Dexscreener link derives from the CA; Buy falls back to it if `BUY_URL` is empty).
 2. Optional: `TELEGRAM_URL`.
 3. Push to `main` — Vercel redeploys.
 

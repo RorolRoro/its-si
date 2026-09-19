@@ -241,7 +241,7 @@
     <p class="sub">Numbers so elegant they barely need to add up.</p>
     <div class="grid">
       <div class="card"><div class="k">Total supply</div><div class="v">134,987,000,000</div><p>One million tokens per vote in the poll. Very fair. Very accurate.</p></div>
-      <div class="card"><div class="k">Buy / sell tax</div><div class="v">0% / 0%</div><p>Taxes are for Artificial coins.</p></div>
+      <div class="card"><div class="k">Fees</div><div class="v">1% TOTAL</div><p>Launched on Pons. One percent, all in. Anything more would be Artificial.</p></div>
       <div class="card"><div class="k">Liquidity</div><div class="v">BURNED</div><p>Like the word "Artificial". Gone. Nobody talks about it anymore.</p></div>
       <div class="card"><div class="k">Team allocation</div><div class="v">0%</div><p>The team is a brain in sunglasses. It doesn't have a wallet.</p></div>
       <div class="card"><div class="k">Intelligence level</div><div class="v" id="iqLabel">TBD BY VOTE</div><p>Superior, Extreme or Supreme. The chain will decide. Well, the poll will.</p></div>
@@ -257,7 +257,7 @@
     <div class="steps">
       <div class="step"><h3>Get a wallet</h3><p>Phantom, Solflare, whatever. Install it, write down the seed phrase, do not tweet the seed phrase.</p></div>
       <div class="step"><h3>Load some SOL</h3><p>Buy SOL on an exchange and send it to your wallet. Only what you're happy to lose to a brain in sunglasses.</p></div>
-      <div class="step"><h3>Paste the CA</h3><p>Copy the contract address from the top of this page into pump.fun or your favourite DEX. Check it twice. Fake $SI is Artificial.</p></div>
+      <div class="step"><h3>Buy on Pons</h3><p>Hit “Buy $SI” or paste the contract address from the top of this page into Pons. 1% total fees. Check the CA twice — fake $SI is Artificial.</p></div>
       <div class="step"><h3>Vote, then hold</h3><p>Swap, then scroll up and vote. Holding is optional; voting is a civic duty.</p></div>
     </div>
   </div>
@@ -309,7 +309,7 @@
   /* ===================== LAUNCH CONFIG — edit here only ===================== */
   const CONFIG = {
     CONTRACT_ADDRESS: "",                       // <- paste the CA here at launch
-    BUY_URL: "",                                // empty = auto (pump.fun/coin/<CA>)
+    BUY_URL: "",                                // Pons page for the coin; empty = falls back to Dexscreener
     DEX_URL: "",                                // empty = auto (dexscreener.com/solana/<CA>)
     TELEGRAM_URL: "",                           // empty = link hidden
     X_URL: "https://x.com/realDonaldTrump",     // the original poll
@@ -327,8 +327,8 @@
 
   /* ===================== CA / LINKS ===================== */
   const CA = CONFIG.CONTRACT_ADDRESS.trim();
-  const buyUrl = CONFIG.BUY_URL || (CA ? "https://pump.fun/coin/"+CA : "");
   const dexUrl = CONFIG.DEX_URL || (CA ? "https://dexscreener.com/solana/"+CA : "");
+  const buyUrl = CONFIG.BUY_URL || dexUrl;
   const caEl = $("#ca"), copyBtn = $("#copyCa");
   if (CA){ caEl.textContent = CA; caEl.classList.add("is-live"); }
   else { caEl.textContent = "Coming soon — drops at launch"; copyBtn.hidden = true; }
