@@ -7,8 +7,8 @@
 import { createHash, randomUUID } from "node:crypto";
 
 const CHOICES = ["superior", "extreme", "supreme"];
-// First-run seed = the tweet's 134,987 votes. Set SEED_VOTES="0,0,0" in Vercel env to start from zero.
-const DEFAULT_SEED = "61204,22451,51332";
+// First-run seed. Real votes only by default; SEED_VOTES="a,b,c" in Vercel env overrides.
+const DEFAULT_SEED = "0,0,0";
 const KEY_COUNTS = "si:votes";
 const KEY_VOTERS = "si:voters";
 const COOKIE = "si_voter";

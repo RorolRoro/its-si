@@ -16,4 +16,4 @@ Parody memecoin site + live poll (Superior / Extreme / Supreme Intelligence).
 ## Poll storage (one-time)
 Vercel project → Storage → add **Upstash for Redis** (free tier). It injects `UPSTASH_REDIS_REST_URL` / `UPSTASH_REDIS_REST_TOKEN` (or `KV_REST_API_*`). Redeploy once. Without it the API answers 503 and the page falls back to a browser-only poll.
 
-Optional env: `SEED_VOTES="0,0,0"` to start from zero instead of the tweet's 134,987 votes; `VOTE_SALT` for the voter hash.
+Optional env: `SEED_VOTES="a,b,c"` to pre-seed counts (default 0,0,0); `VOTE_SALT` for the voter hash.
